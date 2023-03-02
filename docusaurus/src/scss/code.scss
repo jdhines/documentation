@@ -1,0 +1,39 @@
+/** Element: Code */
+
+:root {
+  --custom-code-background-color: var(--strapi-primary-100);
+  --custom-code-border-color: var(--strapi-primary-200);
+  --custom-code-color: var(--strapi-primary-600);
+}
+
+code {
+  font-family:
+    "SFMono-Regular",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    monospace
+  ;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--custom-code-background-color);
+  border-color: var(--custom-code-border-color);
+  color: var(--custom-code-color);
+}
+
+p, li, table {
+  code {
+    font-size: 13px;
+  }
+}
+
+/** Dark mode */
+@include dark {
+  pre:not(.prism-code) code {
+    background-color: var(--strapi-warning-200);
+  }
+}

@@ -17,6 +17,7 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
 
 .navbar {
   --custom-navbar-brand-mr: 0;
+  --custom-navbar-icon-color: var(--strapi-neutral-500);
   --custom-navbar-icon-button-size: 36px;
   --custom-navbar-icon-button-hover-background: var(--strapi-neutral-100);
   --custom-navbar-items-font-size: var(--strapi-font-size-sm);
@@ -66,19 +67,20 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
     }
   }
 
-  .DocSearch-Button {
-    width: var(--custom-navbar-search-button-width);
+  &__link svg,
+  .navbar-sidebar__close,
+  .DocSearch-Button,
+  #{$selector-color-mode-toggle-button} {
+    color: var(--custom-navbar-icon-color);
   }
 
   .navbar-sidebar__close,
   .DocSearch-Button,
   #{$selector-color-mode-toggle-button} {
     --ifm-color-emphasis-600: currentColor;
+
     background: transparent;
     border-radius: 50%;
-    color: currentColor;
-
-    @include transition;
 
     &:hover {
       background: var(--custom-navbar-icon-button-hover-background);
@@ -92,6 +94,10 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
     justify-content: center;
     height: var(--custom-navbar-icon-button-size);
     width: var(--custom-navbar-icon-button-size);
+  }
+
+  .DocSearch-Button {
+    width: var(--custom-navbar-search-button-width);
   }
 }
 

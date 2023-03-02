@@ -1,11 +1,15 @@
 .table-of-contents {
-  font-size: 12px;
+  --custom-toc-py: var(--strapi-spacing-1);
+  --custom-toc-items-py: var(--strapi-spacing-0);
+
+  --ifm-toc-padding-vertical: var(--custom-toc-py);
+
+  font-size: var(--strapi-font-size-xs);
 
   > li {
-    margin:
-      var(--strapi-spacing-4)
-      var(--ifm-toc-padding-horizontal)
-    ;
+    margin: 0 var(--ifm-toc-padding-horizontal);
+    padding-top: var(--custom-toc-items-py);
+    padding-bottom: var(--custom-toc-items-py);
   }
 
   &__link {
@@ -13,6 +17,8 @@
 
     position: relative;
     font-weight: 400;
+
+    @include flex-row;
     @include transition;
 
     &:hover {
@@ -43,5 +49,12 @@
         --custom-table-of-contents-link-active-before-left: -32px;
       }
     }
+  }
+}
+
+/** Responsive */
+@include medium-up {
+  .table-of-contents {
+    --custom-toc-items-py: var(--strapi-spacing-2);
   }
 }

@@ -1,66 +1,31 @@
 /** Base: General Styles */
 
-:root {
-  --custom-code-background-color: var(--strapi-primary-100);
-  --custom-code-border-color: var(--strapi-primary-200);
-  --custom-code-color: var(--strapi-primary-600);
+main {
+  article:first-child:not(.col),
+  article:first-child:not(.col) + nav {
+    --custom-main-px: var(--strapi-spacing-0);
+    --custom-main-width: 683px;
 
-  --custom-heading-decorative-line-color: var(--strapi-neutral-150);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  --ifm-heading-color: var(--strapi-neutral-900);
-  --ifm-heading-font-weight: 600;
-}
-
-h1, .markdown h1:first-child {
-  --ifm-h1-font-size: 35px;
-  // --ifm-heading-line-height: 24px; // not good
-}
-
-h2, .markdown > h2 {
-  --ifm-h2-font-size: 26px;
-  // --ifm-heading-line-height: 24px; // not good
-}
-
-code {
-  font-family:
-    "SFMono-Regular",
-    "Menlo",
-    "Monaco",
-    "Consolas",
-    "Liberation Mono",
-    "Courier New",
-    monospace
-  ;
-  font-weight: 400;
-  line-height: 24px;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-p, li, table {
-  code {
-    font-size: 13px;
+    max-width: calc(var(--custom-main-width) + calc(var(--strapi-spacing-4) * 2));
+    padding-left: var(--custom-main-px) !important;
+    padding-right: var(--custom-main-px) !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-code {
-  background-color: var(--custom-code-background-color);
-  border-color: var(--custom-code-border-color);
-  color: var(--custom-code-color);
+/** Responsive */
+@include medium-up {
+  main {
+    article:first-child:not(.col),
+    article:first-child:not(.col) + nav {
+      --custom-main-px: var(--strapi-spacing-4);
+    }
+  }
 }
 
 /** Dark mode */
 @include dark {
-  h1, h2, h3, h4, h5, h6 {
-    --ifm-heading-color: var(--strapi-neutral-900);
-  }
-
-  pre:not(.prism-code) code {
-    background-color: var(--strapi-warning-200);
-  }
-
   .container img[width="16"] {
     /* 'Temporary' fix while we figure a way to display white icons in dark mode 😅  */
     background-color: white;

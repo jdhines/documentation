@@ -39,3 +39,16 @@
 @mixin transition {
   transition: all 0.2s ease;
 }
+
+/** Mixin: Flex */
+@mixin flex-row(
+  $gap: var(--strapi-spacing-2),
+  $align-items: center,
+  $justify-content: null
+) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}

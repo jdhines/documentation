@@ -44,7 +44,7 @@ function PrerequisitesAdmonition(props) {
       className="theme-admonition theme-admonition-prerequisites admonition_node_modules-@docusaurus-theme-classic-lib-theme-Admonition-Layout-styles-module alert alert--warning admonition--prerequisites">
       <div className="admonitionHeading_node_modules-@docusaurus-theme-classic-lib-theme-Admonition-Layout-styles-module">
         <span className="admonitionIcon_node_modules-@docusaurus-theme-classic-lib-theme-Admonition-Layout-styles-module admonition__custom-title">
-        ✔︎ Prerequisites
+        ✔︎ {props.title || 'Prerequisites'}
         </span>
       </div>
       <div

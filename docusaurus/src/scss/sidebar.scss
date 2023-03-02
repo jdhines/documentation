@@ -125,7 +125,7 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
 
           > .menu__list-item-collapsible {
             font-weight: 700;
-            font-size: 18px;
+            font-size: var(--strapi-font-size-lg);
           }
         }
       }
@@ -133,16 +133,16 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
       &-category, &-link {
         &-level {
           &-1 {
-            --custom-sidebar-menu-list-item-font-size: 18px;
+            --custom-sidebar-menu-list-item-font-size: var(--strapi-font-size-lg);
           }
 
           &-2 {
-            --custom-sidebar-menu-list-item-font-size: 16px;
+            --custom-sidebar-menu-list-item-font-size: var(--strapi-font-size-md);
             --custom-sidebar-menu-list-item-link-active-left: -20px;
           }
 
           &-3 {
-            --custom-sidebar-menu-list-item-font-size: 14px; // next levels will have this same value
+            --custom-sidebar-menu-list-item-font-size: var(--strapi-font-size-sm); // next levels will have this same value
             --custom-sidebar-menu-list-item-link-active-left: -32px;
           }
 
