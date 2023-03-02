@@ -74,8 +74,17 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
   }
 
   &__link {
+    font-weight: 500;
+    @include transition;
+
+    &:hover {
+      --ifm-menu-color: var(--strapi-neutral-800);
+    }
+
     &--active {
       --ifm-menu-color-active: var(--strapi-neutral-700);
+
+      font-weight: 700;
 
       &:not(.menu__link--sublist) {
         --ifm-menu-color-active: var(--strapi-primary-600);
@@ -153,14 +162,6 @@ $selector-color-mode-toggle-wrapper: 'div[class*="ColorModeToggle"]';
 .theme-doc-sidebar-container {
   --docusaurus-collapse-button-bg: var(--strapi-neutral-0);
   --docusaurus-collapse-button-bg-hover: var(--strapi-neutral-100);
-}
-
-/** Responsive */
-@include medium-up {
-  .menu {
-    // padding-top: 0 !important;
-    // padding-bottom: 0 !important;
-  }
 }
 
 /** Dark mode */

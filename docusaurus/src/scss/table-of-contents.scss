@@ -1,16 +1,31 @@
-:root body {
-
-}
-
 .table-of-contents {
   font-size: 12px;
+
+  > li {
+    margin:
+      var(--strapi-spacing-4)
+      var(--ifm-toc-padding-horizontal)
+    ;
+  }
 
   &__link {
     --custom-table-of-contents-link-active-before-left: -16px;
 
     position: relative;
+    font-weight: 400;
+    @include transition;
+
+    &:hover {
+      font-weight: 500;
+
+      &:not(.table-of-contents__link--active) {
+        --ifm-color-primary: var(--strapi-neutral-900);
+      }
+    }
 
     &--active {
+      font-weight: 500;
+
       &:before {
         content: " ";
         position: absolute;

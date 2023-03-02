@@ -2,11 +2,22 @@
 
 .breadcrumbs {
   --ifm-breadcrumb-item-background-active: transparent;
+  --ifm-breadcrumb-border-radius: var(--strapi-spacing-1);
   --ifm-breadcrumb-color-active: var(--strapi-neutral-800);
+  --ifm-link-hover-color: var(--strapi-neutral-700);
 
   &__item {
     &--active {
       font-weight: 700;
+    }
+  }
+
+  &__link {
+    background-color: transparent;
+    @include transition;
+
+    &:any-link:hover {
+      --ifm-breadcrumb-item-background-active: var(--strapi-neutral-100);
     }
   }
 }
